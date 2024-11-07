@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\PharmacyApp.Common\PharmacyApp.Common.csproj" />
+    <ProjectReference Include="..\PharmacyApp.Data.Models\PharmacyApp.Data.Models.csproj" />
+    <ProjectReference Include="..\PharmacyApp.Data\PharmacyApp.Data.csproj" />
+    <ProjectReference Include="..\PharmacyApp.Web.ViewModels\PharmacyApp.Web.ViewModels.csproj" />
+  </ItemGroup>
+
+</Project>
