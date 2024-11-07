@@ -27,6 +27,7 @@
         public string ActiveIngredient { get; set; }= null!;
 
         [Required]
+        [MaxLength(MedicineActiveIngredientQuantityMaxLength)]
         public string ActiveIngredientQuantity { get; set; }=null!;
 
         [Required]
@@ -42,6 +43,7 @@
         public MedicineForm MedicineForm { get; set; }=null!;
 
         [Required]
+        [MaxLength(MedicineQuantityInABoxMaxLength)]
         public string QuantityInABox { get; set; }=null !;
 
         [Required]

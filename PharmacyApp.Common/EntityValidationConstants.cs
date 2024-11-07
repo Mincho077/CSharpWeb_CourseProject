@@ -22,7 +22,14 @@
             public const int MedicineActiveIngredientMaxLength = 50;
 
             public const int MedicineFormMinLength = 2;
-            public const int MedicineFormMaxLength = 2;
+            public const int MedicineFormMaxLength = 50;
+
+            public const int MedicineQuantityInABoxMinLength = 2;
+            public const int MedicineQuantityInABoxMaxLength = 50;
+
+            public const int MedicineActiveIngredientQuantityMinLength= 5;
+            public const int MedicineActiveIngredientQuantityMaxLength= 50;
+
 
             public const string MedicineDateFormat = "dd-MM-yyyy";
 

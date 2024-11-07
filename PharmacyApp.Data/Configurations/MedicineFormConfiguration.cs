@@ -49,6 +49,22 @@
 
             forms.Add(form);
 
+            form = new MedicineForm()
+            {
+                Id = 5,
+                Name = "cream"
+            };
+
+            forms.Add(form);
+
+            form = new MedicineForm()
+            {
+                Id = 6,
+                Name = "ointment"
+            };
+
+            forms.Add(form);
+
             return forms.ToArray();
         }
     }
