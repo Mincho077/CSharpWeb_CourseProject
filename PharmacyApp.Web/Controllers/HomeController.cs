@@ -1,23 +1,26 @@
 namespace PharmacyApp.Web.Controllers
 {
     using System.Diagnostics;
-
     using Microsoft.AspNetCore.Mvc;
-
     using PharmacyApp.Web.ViewModels.Home;
-
+    using PharmacyApp.Services.Data;
+    using PharmacyApp.Services.Data.Interfaces;
 
     public class HomeController : Controller
     {
        
-        public HomeController()
+        private readonly IMedicineService mediicineService;
+        public HomeController(IMedicineService service)
         {
-            
+            mediicineService = service;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View();
+            IEnumerable<IndexViewModel>viewModel=await mediicineService
+                .LastThreeOTCMedicinesAsync();
+
+            return View(viewModel);
         }
 
 
