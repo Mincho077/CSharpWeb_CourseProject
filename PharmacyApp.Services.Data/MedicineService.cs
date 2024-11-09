@@ -1,11 +1,12 @@
-﻿using Microsoft.EntityFrameworkCore;
-using PharmacyApp.Data;
-using PharmacyApp.Services.Data.Interfaces;
-using PharmacyApp.Web.ViewModels.Home;
-
-namespace PharmacyApp.Services.Data
+﻿namespace PharmacyApp.Services.Data
 {
-    internal class MedicineService : IMedicineService
+    using Microsoft.EntityFrameworkCore;
+    using PharmacyApp.Data;
+    using PharmacyApp.Services.Data.Interfaces;
+    using PharmacyApp.Web.ViewModels.Home;
+    using static PharmacyApp.Common.EntityValidationConstanst.MedicineConstants;
+
+    public class MedicineService : IMedicineService
     {
         private readonly PharmacyAppDbContext context;
 
@@ -16,12 +17,15 @@ namespace PharmacyApp.Services.Data
         public async Task<IEnumerable<IndexViewModel>> LastThreeOTCMedicinesAsync()
         {
             return await context.Medicines
-                .Where(m => m.MedicineType.Name == "OTC")
-                .OrderByDescending(m => m.CreatedOn)
+
                 .Select(m => new IndexViewModel()
                 {
                     Id = m.Id.ToString(),
-                    Title=m.Name.ToString(),
+                    Price = m.Price.ToString(),
+                    ExpiryDate=m.ExpiryDate.ToString(MedicineDateFormat),
+                    MedicineType=m.MedicineType.Name,
+                    Pharmacist=m.Pharmacist.User.UserName??string.Empty,
+                    Title = m.Name.ToString(),
                     ImageUrl = m.ImageUrl,
                 })
                 .ToArrayAsync();

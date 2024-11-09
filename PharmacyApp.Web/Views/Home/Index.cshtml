@@ -1,54 +1,40 @@
 ﻿@model IEnumerable<IndexViewModel>
 @{
-ViewData["Title"] = "Home Page";
-var medicines = Model.ToList();
+    ViewBag.Title = "Medicines";
 }
-@if (!medicines.Any())
-{
-<div class="mt-4 p-5 bg-light">
-<h1 class="display-4">Welcome to the best place for renting houses!</h1>
-<p class="lead">
- There are no medicines in the system currently available
-so why don't you just add one?
-</p>
-<hr class="my-4">
-<p class="lead">
-@if (User.Identity?.IsAuthenticated??false)
-{
-<a asp-controller="Medicine" asp-action="Add" class="btn btn-primary
-btn-lg"
-role="button">Add Medicine</a>
-}
-</p>
-</div>
-}
-<div class="mb-5"></div>
-<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-<div class="carousel-inner">
-   @for (int i = 0; i < medicines.Count(); i++)
-{
-   var medicine = medicines[i];
-<div class="carousel-item @(i == 0 ? "active" : string.Empty)">
-<img class="d-block w-100" style="height:500px"
-     src="@medicine.ImageUrl" alt="@medicine.Title">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>
-                            <a class="btn btn-primary" asp-controller="House" asp-
-                               action="Details"
-                           asp-route-id="@medicine.Id"> @medicine.Title</a>
-                        </h5>
-                    </div>
-                </div>
+
+
+<h2 class="text-center">@ViewBag.Title</h2>
+<hr />
+
+<div class="text-center row">
+    @foreach (var m in Model)
+    {
+        <div class="card col-4" style="width: 20rem; ">
+            <div class="card-body">
+                <h5 class="card-title mt-1">@m.Title</h5>
+                <img class="card-img-top" src=@m.ImageUrl alt="Ad Image">
+                <p class="mb-0"><span class="fw-bold">Added on: </span>@m.ExpiryDate</p>
+                <p class="mb-0"><span class="fw-bold">Category: </span>@m.MedicineType</p>
+                <p class="mb-0"><span class="fw-bold">Price: </span>@m.Price BGN</p>
+            </div>
+
+            @if (User.Identity.Name == m.Pharmacist)
+            {
+                <a asp-controller="Ad" asp-action="Edit" asp-route-id="@m.Id" class="btn btn-warning mb-2 w-100 p-3 fw-bold">Edit the Ad</a>
+            }
+            else
+            {
+                <form class="input-group-sm " asp-controller="Ad" asp-action="AddToCart" asp-route-id="@m.Id">
+                    <input type="submit" value="Add to Cart" class="fs-6 btn btn-warning mb-3 w-100 p-3 fw-bold" />
+                </form>
             }
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-
-                target="#carouselExampleControls" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-
-                target="#carouselExampleControls" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
-    </div>
+    }
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
+
+

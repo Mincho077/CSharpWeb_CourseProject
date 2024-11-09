@@ -3,6 +3,9 @@ namespace PharmacyApp.Web
     using Microsoft.EntityFrameworkCore;
     using PharmacyApp.Data;
     using PharmacyApp.Data.Models;
+    using PharmacyApp.Services.Data.Interfaces;
+    using Microsoft.Extensions.DependencyInjection;
+    using static PharmacyApp.Web.Infrastructure.Extensions.WebApplicationBuilderExtensions;
 
     public class Program
     {
@@ -30,6 +33,8 @@ namespace PharmacyApp.Web
                    builder.Configuration.GetValue<int>("Identity:Password:RequiredLength");
             })
                 .AddEntityFrameworkStores<PharmacyAppDbContext>();
+
+            builder.Services.AddApplicationServices(typeof(IMedicineService));
             builder.Services.AddControllersWithViews();
 
             WebApplication app = builder.Build();
