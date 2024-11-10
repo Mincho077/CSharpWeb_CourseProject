@@ -5,6 +5,8 @@
     using PharmacyApp.Services.Data.Interfaces;
     using static Infrastructure.Extensions.ClaimsPrincipalExtensions;
     using static Common.NotificationMessagesConstants;
+    using PharmacyApp.Web.ViewModels.Pharmacist;
+
     [Authorize]
     public class PharmacistController : Controller
     {
@@ -21,12 +23,28 @@
         {
             string userId= User.GetUserId();
 
-            bool isPharmacist =await  pharmacistService.PharmacistExistByUserId(userId);
+            bool isPharmacist =await  pharmacistService.PharmacistExistByUserIdAsync(userId);
 
             if (isPharmacist) 
             {
-                TempData[ErrorMesage] = "Нали се регистрива ве,кретен!";
+                TempData[ErrorMesage] = "Нали се регистрира ве,кретен!";
                 return RedirectToAction("Index","Home");
+            }
+
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> RegisterPharmacist(RegisterPharmacistFormViewModel model)
+        {
+            string userId = User.GetUserId();
+
+            bool isPharmacist = await pharmacistService.PharmacistExistByUserIdAsync(userId);
+
+            if (isPharmacist)
+            {
+                TempData[ErrorMesage] = "Нали се регистрира ве,кретен!";
+                return RedirectToAction("Index", "Home");
             }
 
             return View();
