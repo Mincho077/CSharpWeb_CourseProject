@@ -21,12 +21,15 @@
                 .Select(m => new IndexViewModel()
                 {
                     Id = m.Id.ToString(),
+                    Title = m.Name.ToString(),
+                    ImageUrl = m.ImageUrl,
+                    ActiveIngredient= m.ActiveIngredient,
+                    ActiveIngredientQuantity = m.ActiveIngredientQuantity,
                     Price = m.Price.ToString(),
                     ExpiryDate=m.ExpiryDate.ToString(MedicineDateFormat),
                     MedicineType=m.MedicineType.Name,
                     Pharmacist=m.Pharmacist.User.UserName??string.Empty,
-                    Title = m.Name.ToString(),
-                    ImageUrl = m.ImageUrl,
+
                 })
                 .ToArrayAsync();
         }
