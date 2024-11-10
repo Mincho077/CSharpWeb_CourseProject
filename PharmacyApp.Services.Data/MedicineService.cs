@@ -2,7 +2,7 @@
 {
     using Microsoft.EntityFrameworkCore;
     using PharmacyApp.Data;
-    using PharmacyApp.Services.Data.Interfaces;
+    using Interfaces;
     using PharmacyApp.Web.ViewModels.Home;
     using static PharmacyApp.Common.EntityValidationConstanst.MedicineConstants;
 

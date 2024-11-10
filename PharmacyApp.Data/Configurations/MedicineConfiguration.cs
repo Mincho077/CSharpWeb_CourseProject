@@ -135,7 +135,7 @@
                 ActiveIngredientQuantity = "5 mg",
                 Quantity = 10,
                 MedicineFormId = 1,
-                MedicineTypeId = 3,
+                MedicineTypeId = 2,
                 QuantityInABox = "30 tb",
                 Price = 5.50m,
                 ExpiryDate = DateTime.ParseExact("31-08-2027", MedicineDateFormat, CultureInfo.InvariantCulture),

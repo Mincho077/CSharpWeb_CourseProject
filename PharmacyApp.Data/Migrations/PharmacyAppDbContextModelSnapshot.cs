@@ -354,10 +354,10 @@ namespace PharmacyApp.Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("702f20e7-4e1d-4e10-bb69-cdc545049545"),
+                            Id = new Guid("c964e220-b801-42c2-b04b-14d541d63f9f"),
                             ActiveIngredient = "cefprozil",
                             ActiveIngredientQuantity = "500 mg",
-                            CreatedOn = new DateTime(2024, 11, 7, 7, 13, 4, 354, DateTimeKind.Utc).AddTicks(3186),
+                            CreatedOn = new DateTime(2024, 11, 10, 7, 27, 20, 327, DateTimeKind.Utc).AddTicks(9348),
                             ExpiryDate = new DateTime(2028, 10, 31, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             ImageUrl = "https://static.framar.bg/thumbs/6/products/cefzil-petstotin-mg.jpg",
                             ManufacturerId = 1,
@@ -371,10 +371,10 @@ namespace PharmacyApp.Data.Migrations
                         },
                         new
                         {
-                            Id = new Guid("4fb34ab4-8f81-4c8e-ada4-068d248e0e86"),
+                            Id = new Guid("15562951-e3ac-4ef0-8f08-148aad0a5696"),
                             ActiveIngredient = "amoxicillin",
                             ActiveIngredientQuantity = "1000 mg",
-                            CreatedOn = new DateTime(2024, 11, 7, 7, 13, 4, 354, DateTimeKind.Utc).AddTicks(3366),
+                            CreatedOn = new DateTime(2024, 11, 10, 7, 27, 20, 327, DateTimeKind.Utc).AddTicks(9498),
                             ExpiryDate = new DateTime(2027, 5, 30, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             ImageUrl = "https://static.framar.bg/thumbs/6/products/ospamox-1000.jpg",
                             ManufacturerId = 1,
@@ -388,10 +388,10 @@ namespace PharmacyApp.Data.Migrations
                         },
                         new
                         {
-                            Id = new Guid("c38246aa-8050-4e82-acb1-960076372559"),
+                            Id = new Guid("d295eb84-65fe-4954-910b-a594ee51caef"),
                             ActiveIngredient = "bromazepam",
                             ActiveIngredientQuantity = "10 mg",
-                            CreatedOn = new DateTime(2024, 11, 7, 7, 13, 4, 354, DateTimeKind.Utc).AddTicks(3399),
+                            CreatedOn = new DateTime(2024, 11, 10, 7, 27, 20, 327, DateTimeKind.Utc).AddTicks(9515),
                             ExpiryDate = new DateTime(2026, 9, 30, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             ImageUrl = "https://static.framar.bg/thumbs/6/products/leksotan-tabletki-bromazepam-actavis-lexotan.jpg",
                             ManufacturerId = 3,
@@ -405,10 +405,10 @@ namespace PharmacyApp.Data.Migrations
                         },
                         new
                         {
-                            Id = new Guid("1942cc54-84dc-43c2-b997-fdc75b718c87"),
+                            Id = new Guid("1eb1760a-8c8d-428a-9210-2b397a5066de"),
                             ActiveIngredient = "diazepam",
                             ActiveIngredientQuantity = "3 mg",
-                            CreatedOn = new DateTime(2024, 11, 7, 7, 13, 4, 354, DateTimeKind.Utc).AddTicks(3429),
+                            CreatedOn = new DateTime(2024, 11, 10, 7, 27, 20, 327, DateTimeKind.Utc).AddTicks(9527),
                             ExpiryDate = new DateTime(2025, 11, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             ImageUrl = "https://static.framar.bg/thumbs/6/products/diazepam-20tablets-5mg.jpg",
                             ManufacturerId = 3,
@@ -422,10 +422,10 @@ namespace PharmacyApp.Data.Migrations
                         },
                         new
                         {
-                            Id = new Guid("ef6b6885-4621-4cc7-96f1-a378d515205f"),
+                            Id = new Guid("c328b5e7-3345-48a9-a061-ebc56ff29d25"),
                             ActiveIngredient = "moxonidine",
                             ActiveIngredientQuantity = "0.4 mg",
-                            CreatedOn = new DateTime(2024, 11, 7, 7, 13, 4, 354, DateTimeKind.Utc).AddTicks(3472),
+                            CreatedOn = new DateTime(2024, 11, 10, 7, 27, 20, 327, DateTimeKind.Utc).AddTicks(9545),
                             ExpiryDate = new DateTime(2026, 3, 31, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             ImageUrl = "https://static.framar.bg/thumbs/6/products/moxogamma-4.jpg",
                             ManufacturerId = 4,
@@ -439,15 +439,15 @@ namespace PharmacyApp.Data.Migrations
                         },
                         new
                         {
-                            Id = new Guid("d28606d8-7ef1-47c2-88ec-7028e455245a"),
+                            Id = new Guid("aac1406f-a4c0-4f2b-93e6-04de308251e0"),
                             ActiveIngredient = "bisoprolol fumarate",
                             ActiveIngredientQuantity = "5 mg",
-                            CreatedOn = new DateTime(2024, 11, 7, 7, 13, 4, 354, DateTimeKind.Utc).AddTicks(3502),
+                            CreatedOn = new DateTime(2024, 11, 10, 7, 27, 20, 327, DateTimeKind.Utc).AddTicks(9556),
                             ExpiryDate = new DateTime(2027, 8, 31, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             ImageUrl = "https://sopharmacy.bg/media/sys_master/h39/h8c/8930734538782.jpg",
                             ManufacturerId = 4,
                             MedicineFormId = 1,
-                            MedicineTypeId = 3,
+                            MedicineTypeId = 2,
                             Name = "Bisogamma",
                             PharmacistId = new Guid("3315d47e-feb2-439b-a83e-75f96f97e14b"),
                             Price = 5.50m,
@@ -456,10 +456,10 @@ namespace PharmacyApp.Data.Migrations
                         },
                         new
                         {
-                            Id = new Guid("b1e61153-504e-4513-b35b-ee9df92e3fe3"),
+                            Id = new Guid("8693253f-d026-4c92-aeb3-ba98069b720b"),
                             ActiveIngredient = "ambroxol hydrochloride",
                             ActiveIngredientQuantity = "15 mg/5 ml",
-                            CreatedOn = new DateTime(2024, 11, 7, 7, 13, 4, 354, DateTimeKind.Utc).AddTicks(3779),
+                            CreatedOn = new DateTime(2024, 11, 10, 7, 27, 20, 327, DateTimeKind.Utc).AddTicks(9566),
                             ExpiryDate = new DateTime(2025, 7, 31, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             ImageUrl = "https://static.framar.bg/thumbs/6/products/flavamed-za-deca-berlin-chemie.jpg",
                             ManufacturerId = 5,
@@ -586,7 +586,7 @@ namespace PharmacyApp.Data.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Pharmacist");
+                    b.ToTable("Pharmacists");
                 });
 
             modelBuilder.Entity("PharmacyApp.Data.Models.Physician", b =>

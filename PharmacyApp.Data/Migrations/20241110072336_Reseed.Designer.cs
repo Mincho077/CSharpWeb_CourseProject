@@ -12,8 +12,8 @@ using PharmacyApp.Data;
 namespace PharmacyApp.Data.Migrations
 {
     [DbContext(typeof(PharmacyAppDbContext))]
-    [Migration("20241107070925_SeedingMedicineData")]
-    partial class SeedingMedicineData
+    [Migration("20241110072336_Reseed")]
+    partial class Reseed
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -353,127 +353,6 @@ namespace PharmacyApp.Data.Migrations
                     b.HasIndex("PharmacistId");
 
                     b.ToTable("Medicines");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = new Guid("3d243ef2-4f3a-43c1-9d32-0602ce6e0980"),
-                            ActiveIngredient = "cefprozil",
-                            ActiveIngredientQuantity = "500 mg",
-                            CreatedOn = new DateTime(2024, 11, 7, 7, 9, 23, 351, DateTimeKind.Utc).AddTicks(2368),
-                            ExpiryDate = new DateTime(2028, 10, 31, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ImageUrl = "https://static.framar.bg/thumbs/6/products/cefzil-petstotin-mg.jpg",
-                            ManufacturerId = 1,
-                            MedicineFormId = 2,
-                            MedicineTypeId = 1,
-                            Name = "Cefzil",
-                            PharmacistId = new Guid("3315d47e-feb2-439b-a83e-75f96f97e14b"),
-                            Price = 24.62m,
-                            Quantity = 10,
-                            QuantityInABox = "10 tb"
-                        },
-                        new
-                        {
-                            Id = new Guid("49a2ba00-3281-457a-a1c8-725ac9443ae5"),
-                            ActiveIngredient = "amoxicillin",
-                            ActiveIngredientQuantity = "1000 mg",
-                            CreatedOn = new DateTime(2024, 11, 7, 7, 9, 23, 351, DateTimeKind.Utc).AddTicks(2555),
-                            ExpiryDate = new DateTime(2027, 5, 30, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ImageUrl = "https://static.framar.bg/thumbs/6/products/ospamox-1000.jpg",
-                            ManufacturerId = 1,
-                            MedicineFormId = 1,
-                            MedicineTypeId = 1,
-                            Name = "Ospamox",
-                            PharmacistId = new Guid("3315d47e-feb2-439b-a83e-75f96f97e14b"),
-                            Price = 5.87m,
-                            Quantity = 10,
-                            QuantityInABox = "14 tb"
-                        },
-                        new
-                        {
-                            Id = new Guid("f798aeb5-5a78-4471-8b1d-44c1dd19fa22"),
-                            ActiveIngredient = "bromazepam",
-                            ActiveIngredientQuantity = "10 mg",
-                            CreatedOn = new DateTime(2024, 11, 7, 7, 9, 23, 351, DateTimeKind.Utc).AddTicks(2588),
-                            ExpiryDate = new DateTime(2026, 9, 30, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ImageUrl = "https://static.framar.bg/thumbs/6/products/leksotan-tabletki-bromazepam-actavis-lexotan.jpg",
-                            ManufacturerId = 3,
-                            MedicineFormId = 1,
-                            MedicineTypeId = 3,
-                            Name = "Lexotan",
-                            PharmacistId = new Guid("3315d47e-feb2-439b-a83e-75f96f97e14b"),
-                            Price = 5.87m,
-                            Quantity = 10,
-                            QuantityInABox = "30 tb"
-                        },
-                        new
-                        {
-                            Id = new Guid("497c132a-ec2e-46de-bc8b-f64fb70cd902"),
-                            ActiveIngredient = "diazepam",
-                            ActiveIngredientQuantity = "3 mg",
-                            CreatedOn = new DateTime(2024, 11, 7, 7, 9, 23, 351, DateTimeKind.Utc).AddTicks(2618),
-                            ExpiryDate = new DateTime(2025, 11, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ImageUrl = "https://static.framar.bg/thumbs/6/products/diazepam-20tablets-5mg.jpg",
-                            ManufacturerId = 3,
-                            MedicineFormId = 1,
-                            MedicineTypeId = 3,
-                            Name = "Diazepam",
-                            PharmacistId = new Guid("3315d47e-feb2-439b-a83e-75f96f97e14b"),
-                            Price = 5.87m,
-                            Quantity = 10,
-                            QuantityInABox = "20 tb"
-                        },
-                        new
-                        {
-                            Id = new Guid("2ac41b1d-9048-4ae4-b326-6d3ea6bbeede"),
-                            ActiveIngredient = "moxonidine",
-                            ActiveIngredientQuantity = "0.4 mg",
-                            CreatedOn = new DateTime(2024, 11, 7, 7, 9, 23, 351, DateTimeKind.Utc).AddTicks(2657),
-                            ExpiryDate = new DateTime(2026, 3, 31, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ImageUrl = "https://static.framar.bg/thumbs/6/products/moxogamma-4.jpg",
-                            ManufacturerId = 4,
-                            MedicineFormId = 1,
-                            MedicineTypeId = 2,
-                            Name = "Moxogamma",
-                            PharmacistId = new Guid("3315d47e-feb2-439b-a83e-75f96f97e14b"),
-                            Price = 14.96m,
-                            Quantity = 10,
-                            QuantityInABox = "30 tb"
-                        },
-                        new
-                        {
-                            Id = new Guid("3e47b573-d236-47a4-b839-b919cf15f28e"),
-                            ActiveIngredient = "bisoprolol fumarate",
-                            ActiveIngredientQuantity = "5 mg",
-                            CreatedOn = new DateTime(2024, 11, 7, 7, 9, 23, 351, DateTimeKind.Utc).AddTicks(2688),
-                            ExpiryDate = new DateTime(2027, 8, 31, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ImageUrl = "https://sopharmacy.bg/media/sys_master/h39/h8c/8930734538782.jpg",
-                            ManufacturerId = 4,
-                            MedicineFormId = 1,
-                            MedicineTypeId = 3,
-                            Name = "Bisogamma",
-                            PharmacistId = new Guid("3315d47e-feb2-439b-a83e-75f96f97e14b"),
-                            Price = 5.50m,
-                            Quantity = 10,
-                            QuantityInABox = "30 tb"
-                        },
-                        new
-                        {
-                            Id = new Guid("5bd3c39c-2e76-4935-9fd6-9b405572bfef"),
-                            ActiveIngredient = "ambroxol hydrochloride",
-                            ActiveIngredientQuantity = "15 mg/5 ml",
-                            CreatedOn = new DateTime(2024, 11, 7, 7, 9, 23, 351, DateTimeKind.Utc).AddTicks(2847),
-                            ExpiryDate = new DateTime(2025, 7, 31, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ImageUrl = "https://static.framar.bg/thumbs/6/products/flavamed-za-deca-berlin-chemie.jpg",
-                            ManufacturerId = 5,
-                            MedicineFormId = 3,
-                            MedicineTypeId = 4,
-                            Name = "",
-                            PharmacistId = new Guid("3315d47e-feb2-439b-a83e-75f96f97e14b"),
-                            Price = 7.20m,
-                            Quantity = 10,
-                            QuantityInABox = "100 ml"
-                        });
                 });
 
             modelBuilder.Entity("PharmacyApp.Data.Models.MedicineForm", b =>
@@ -589,7 +468,7 @@ namespace PharmacyApp.Data.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Pharmacist");
+                    b.ToTable("Pharmacists");
                 });
 
             modelBuilder.Entity("PharmacyApp.Data.Models.Physician", b =>

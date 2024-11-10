@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace PharmacyApp.Data.Migrations
 {
     /// <inheritdoc />
-    public partial class InitialDbAndSeed : Migration
+    public partial class Reseed : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -199,7 +199,7 @@ namespace PharmacyApp.Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Pharmacist",
+                name: "Pharmacists",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
@@ -209,9 +209,9 @@ namespace PharmacyApp.Data.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Pharmacist", x => x.Id);
+                    table.PrimaryKey("PK_Pharmacists", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Pharmacist_AspNetUsers_UserId",
+                        name: "FK_Pharmacists_AspNetUsers_UserId",
                         column: x => x.UserId,
                         principalTable: "AspNetUsers",
                         principalColumn: "Id",
@@ -285,9 +285,9 @@ namespace PharmacyApp.Data.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_Medicines_Pharmacist_PharmacistId",
+                        name: "FK_Medicines_Pharmacists_PharmacistId",
                         column: x => x.PharmacistId,
-                        principalTable: "Pharmacist",
+                        principalTable: "Pharmacists",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -393,8 +393,8 @@ namespace PharmacyApp.Data.Migrations
                 column: "PharmacistId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Pharmacist_UserId",
-                table: "Pharmacist",
+                name: "IX_Pharmacists_UserId",
+                table: "Pharmacists",
                 column: "UserId");
 
             migrationBuilder.CreateIndex(
@@ -440,7 +440,7 @@ namespace PharmacyApp.Data.Migrations
                 name: "MedicineTypes");
 
             migrationBuilder.DropTable(
-                name: "Pharmacist");
+                name: "Pharmacists");
 
             migrationBuilder.DropTable(
                 name: "AspNetUsers");
