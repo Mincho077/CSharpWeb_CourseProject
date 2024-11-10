@@ -18,7 +18,7 @@ namespace PharmacyApp.Web.Controllers
         public async Task<IActionResult> Index()
         {
             IEnumerable<IndexViewModel>viewModel=await mediicineService
-                .LastThreeOTCMedicinesAsync();
+                .AllMedicinesAsync();
 
             return View(viewModel);
         }

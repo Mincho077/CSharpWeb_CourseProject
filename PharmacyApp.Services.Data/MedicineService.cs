@@ -14,10 +14,10 @@
         {
             context = dBcontext;
         }
-        public async Task<IEnumerable<IndexViewModel>> LastThreeOTCMedicinesAsync()
+        public async Task<IEnumerable<IndexViewModel>> AllMedicinesAsync()
         {
             return await context.Medicines
-
+                .OrderBy(m=>m.MedicineType.Name)
                 .Select(m => new IndexViewModel()
                 {
                     Id = m.Id.ToString(),
