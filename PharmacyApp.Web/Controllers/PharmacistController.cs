@@ -4,6 +4,7 @@
     using Microsoft.AspNetCore.Mvc;
     using PharmacyApp.Services.Data.Interfaces;
     using static Infrastructure.Extensions.ClaimsPrincipalExtensions;
+    using static Common.NotificationMessagesConstants;
     [Authorize]
     public class PharmacistController : Controller
     {
@@ -24,7 +25,8 @@
 
             if (isPharmacist) 
             {
-                return BadRequest();
+                TempData[ErrorMesage] = "Нали се регистрива ве,кретен!";
+                return RedirectToAction("Index","Home");
             }
 
             return View();
