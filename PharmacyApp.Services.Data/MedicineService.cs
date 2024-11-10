@@ -10,9 +10,9 @@
     {
         private readonly PharmacyAppDbContext context;
 
-        public MedicineService(PharmacyAppDbContext dBcontext)
+        public MedicineService(PharmacyAppDbContext context)
         {
-            context = dBcontext;
+            this.context = context;
         }
         public async Task<IEnumerable<IndexViewModel>> AllMedicinesAsync()
         {
