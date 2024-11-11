@@ -39,7 +39,8 @@
         {
             string userId = User.GetUserId();
 
-            bool isPharmacist = await pharmacistService.PharmacistExistByUserIdAsync(userId);
+            bool isPharmacist = await pharmacistService
+                .PharmacistExistByUserIdAsync(userId);
 
             if (isPharmacist)
             {
@@ -47,7 +48,42 @@
                 return RedirectToAction("Index", "Home");
             }
 
-            return View();
+            bool isPhoneNumberTaken= await pharmacistService
+                .PharmacistExistByPhoneNumberIdAsync(model.PhoneNumber);
+
+            if (isPhoneNumberTaken)
+            {
+                ModelState.AddModelError(nameof(model.PhoneNumber),"Мноо си прост ве пич,има вече такъв телефон!");               
+            }
+
+            bool isUINTaken = await pharmacistService
+                .PharmacistExistByPharmacistUINdAsync(model.UIN);
+
+            if (isPhoneNumberTaken)
+            {
+                ModelState.AddModelError(nameof(model.PhoneNumber), "Мноо си прост ве пич,има вече такъв UIN!");
+            }
+
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
+
+            try
+            {
+                await pharmacistService.Create(userId, model);
+            }
+            catch (Exception)
+            {
+
+                TempData[ErrorMesage] = "Unexpected error occurred while register you as a Pharmacist." +
+                    "Please try again later or contact administrator";
+
+                return RedirectToAction("Index", "Home");
+            }
+
+
+            return RedirectToAction("Index", "Home");
         }
     }
 }

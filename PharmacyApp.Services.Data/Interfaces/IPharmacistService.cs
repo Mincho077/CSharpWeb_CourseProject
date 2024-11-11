@@ -8,7 +8,7 @@ namespace PharmacyApp.Services.Data.Interfaces
 
         Task<bool> PharmacistExistByPhoneNumberIdAsync(string phoneNumber);
 
-        Task<bool> PharmacistExistByUINIdAsync(string pharmacistUIN);
+        Task<bool> PharmacistExistByPharmacistUINdAsync(string pharmacistUIN);
 
         Task Create(string userId,RegisterPharmacistFormViewModel model);
     }

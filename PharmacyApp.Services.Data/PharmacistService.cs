@@ -3,6 +3,7 @@
     using Interfaces;
     using Microsoft.EntityFrameworkCore;
     using PharmacyApp.Data;
+    using PharmacyApp.Data.Models;
     using PharmacyApp.Web.ViewModels.Pharmacist;
 
     public class PharmacistService : IPharmacistService
@@ -14,9 +15,18 @@
             context = dBcontext;
         }
 
-        public Task Create(string userId, RegisterPharmacistFormViewModel model)
+        public async Task Create(string userId, RegisterPharmacistFormViewModel model)
         {
-            throw new NotImplementedException();
+            Pharmacist pharmacist = new Pharmacist() 
+            { 
+                Id=Guid.Parse(userId),
+                PhoneNumber = model.PhoneNumber,
+                UIN=model.UIN,
+            };
+
+            await context.Pharmacists.AddAsync(pharmacist);
+            await context.SaveChangesAsync();
+           
         }
 
         public async Task<bool> PharmacistExistByPhoneNumberIdAsync(string phoneNumber)
@@ -26,7 +36,7 @@
                 .AnyAsync(p => p.PhoneNumber==phoneNumber);
         }
 
-        public async Task<bool> PharmacistExistByUINIdAsync(string pharmacistUIN)
+        public async Task<bool> PharmacistExistByPharmacistUINdAsync(string pharmacistUIN)
         {
             return await context
                .Pharmacists
