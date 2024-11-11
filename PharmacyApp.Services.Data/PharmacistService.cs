@@ -19,7 +19,7 @@
         {
             Pharmacist pharmacist = new Pharmacist() 
             { 
-                Id=Guid.Parse(userId),
+                UserId=Guid.Parse(userId),
                 PhoneNumber = model.PhoneNumber,
                 UIN=model.UIN,
             };
