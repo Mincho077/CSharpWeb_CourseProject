@@ -17,6 +17,8 @@
 
         public DbSet<MedicineType> MedicineTypes { get; set; }
 
+        public DbSet<MedicineForm> MedicineForms { get; set; }
+
         public DbSet<Physician> Physicians { get; set; } 
 
         public DbSet<Pharmacist> Pharmacists { get; set; }

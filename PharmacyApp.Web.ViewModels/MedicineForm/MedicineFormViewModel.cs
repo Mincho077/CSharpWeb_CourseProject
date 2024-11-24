@@ -1,6 +1,6 @@
-﻿namespace PharmacyApp.Web.ViewModels.Medicine
+﻿namespace PharmacyApp.Web.ViewModels.MedicineForm
 {
-    public class ManufacturerViewModel
+    public class MedicineFormViewModel
     {
         public int Id { get; set; }
 

@@ -4,7 +4,7 @@
     using Microsoft.EntityFrameworkCore.Metadata.Builders;
     using PharmacyApp.Data.Models;
     using System.Globalization;
-    using static PharmacyApp.Common.EntityValidationConstanst.MedicineConstants;
+    using static PharmacyApp.Common.EntityValidationConstanst.Medicine;
     public class MedicineConfiguration : IEntityTypeConfiguration<Medicine>
     {
         public void Configure(EntityTypeBuilder<Medicine> builder)

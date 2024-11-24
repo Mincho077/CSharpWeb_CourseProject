@@ -1,6 +1,9 @@
 ﻿
 namespace PharmacyApp.Web.ViewModels.Medicine
 {
+    using PharmacyApp.Web.ViewModels.Manufacturer;
+    using PharmacyApp.Web.ViewModels.MedicineForm;
+    using PharmacyApp.Web.ViewModels.MedicineType;
     using System.ComponentModel.DataAnnotations;
     using static PharmacyApp.Common.EntityValidationConstanst.Medicine;
     public class MedicineAddViewModel
@@ -33,7 +36,8 @@ namespace PharmacyApp.Web.ViewModels.Medicine
         public string ActiveIngredientQuantity { get; set; } = null!;
 
         [Required]
-        public int Quantity { get; set; }
+        [Range(MedicineQuantityMinValue,MedicineQuantityMaxValue)]
+        public string Quantity { get; set; } = null!;
 
 
         [Required]

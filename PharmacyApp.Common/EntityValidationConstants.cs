@@ -30,8 +30,11 @@
             public const int MedicineActiveIngredientQuantityMinLength= 5;
             public const int MedicineActiveIngredientQuantityMaxLength= 50;
 
+            public const int MedicineQuantityMinValue = 0;
+            public const int MedicineQuantityMaxValue =int.MaxValue;
+
             public const string MedicinePriceMinValue = "0.00";
-            public const string MedicinePriceMaxValue = "3_000_000.00";
+            public const string MedicinePriceMaxValue = "3000000.00";
 
 
             public const string MedicineDateFormat = "dd-MM-yyyy";

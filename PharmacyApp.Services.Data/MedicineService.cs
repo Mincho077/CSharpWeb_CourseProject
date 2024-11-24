@@ -4,7 +4,7 @@
     using PharmacyApp.Data;
     using Interfaces;
     using PharmacyApp.Web.ViewModels.Home;
-    using static PharmacyApp.Common.EntityValidationConstanst.MedicineConstants;
+    using static PharmacyApp.Common.EntityValidationConstanst.Medicine;
 
     public class MedicineService : IMedicineService
     {
@@ -18,6 +18,7 @@
         {
             return await context.Medicines
                 .OrderBy(m=>m.MedicineType.Name)
+                .AsNoTracking()
                 .Select(m => new IndexViewModel()
                 {
                     Id = m.Id.ToString(),
