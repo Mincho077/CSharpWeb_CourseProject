@@ -21,7 +21,7 @@
                 <p class="mb-0"><span class="fw-bold">Price: </span>@m.Price BGN</p>
             </div>
 
-            @if (User.Identity.Name == m.Pharmacist)
+         @*    @if (User.Identity.Name == m.Pharmacist)
             {
                 <a asp-controller="Ad" asp-action="Edit" asp-route-id="@m.Id" class="btn btn-warning mb-2 w-100 p-3 fw-bold">Edit the Ad</a>
             }
@@ -30,7 +30,7 @@
                 <form class="input-group-sm " asp-controller="Ad" asp-action="AddToCart" asp-route-id="@m.Id">
                     <input type="submit" value="Add to Cart" class="fs-6 btn btn-warning mb-3 w-100 p-3 fw-bold" />
                 </form>
-            }
+            } *@
         </div>
     }
 </div>

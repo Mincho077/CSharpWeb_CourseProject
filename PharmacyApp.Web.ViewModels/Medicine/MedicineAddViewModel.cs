@@ -1,16 +1,11 @@
-﻿namespace PharmacyApp.Data.Models
+﻿
+namespace PharmacyApp.Web.ViewModels.Medicine
 {
-    using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
-    using static PharmacyApp.Common.EntityValidationConstanst.Medicine;
-    public class Medicine
+    using System.ComponentModel.DataAnnotations;
+    using static PharmacyApp.Common.EntityValidationConstanst.MedicineConstants
+    public class MedicineAddViewModel
     {
-        public Medicine()
-        {
-            Id = Guid.NewGuid();
-            CreatedOn = DateTime.UtcNow;
-        }
-
         [Key]
         public Guid Id { get; set; }
 
@@ -20,15 +15,15 @@
 
         [Required]
         [MaxLength(MedicineImageUrlMaxLength)]
-        public string ImageUrl { get; set; }= null!;
+        public string ImageUrl { get; set; } = null!;
 
         [Required]
         [MaxLength(MedicineActiveIngredientMaxLength)]
-        public string ActiveIngredient { get; set; }= null!;
+        public string ActiveIngredient { get; set; } = null!;
 
         [Required]
         [MaxLength(MedicineActiveIngredientQuantityMaxLength)]
-        public string ActiveIngredientQuantity { get; set; }=null!;
+        public string ActiveIngredientQuantity { get; set; } = null!;
 
         [Required]
         public int Quantity { get; set; }
@@ -40,11 +35,11 @@
 
         [Required]
         [ForeignKey(nameof(MedicineFormId))]
-        public MedicineForm MedicineForm { get; set; }=null!;
+        public MedicineForm MedicineForm { get; set; } = null!;
 
         [Required]
         [MaxLength(MedicineQuantityInABoxMaxLength)]
-        public string QuantityInABox { get; set; }=null !;
+        public string QuantityInABox { get; set; } = null!;
 
         [Required]
         public decimal Price { get; set; }
@@ -75,7 +70,6 @@
 
         public Guid? PatientId { get; set; }
 
-        public virtual ApplicationUser? Patient { get; set; }= null!;
-
+        public virtual ApplicationUser? Patient { get; set; } = null
     }
 }

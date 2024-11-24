@@ -2,7 +2,7 @@
 {
     using System.ComponentModel.DataAnnotations;
 
-    using static PharmacyApp.Common.EntityValidationConstanst.ManufacturerConstants;
+    using static PharmacyApp.Common.EntityValidationConstanst.Manufacturer;
     public class Manufacturer
     {
         public Manufacturer()

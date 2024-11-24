@@ -1,7 +1,7 @@
 ﻿namespace PharmacyApp.Data.Models
 {
     using System.ComponentModel.DataAnnotations;
-    using static Common.EntityValidationConstanst.MedicineTypeConstants;
+    using static Common.EntityValidationConstanst.MedicineType;
     public class MedicineType
     {
         public MedicineType()

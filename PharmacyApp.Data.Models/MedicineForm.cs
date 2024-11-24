@@ -1,7 +1,7 @@
 ﻿namespace PharmacyApp.Data.Models
 {
     using System.ComponentModel.DataAnnotations;
-    using static Common.EntityValidationConstanst.MedicineFormConstants;
+    using static Common.EntityValidationConstanst.MedicineForm;
     public class MedicineForm
     {
         
