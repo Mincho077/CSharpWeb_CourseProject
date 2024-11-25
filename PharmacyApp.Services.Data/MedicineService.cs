@@ -2,9 +2,12 @@
 {
     using Microsoft.EntityFrameworkCore;
     using PharmacyApp.Data;
+    using PharmacyApp.Data.Models;
     using Interfaces;
     using PharmacyApp.Web.ViewModels.Home;
     using static PharmacyApp.Common.EntityValidationConstanst.Medicine;
+    using PharmacyApp.Web.ViewModels.Medicine;
+    using static PharmacyApp.Common.EntityValidationConstanst;
 
     public class MedicineService : IMedicineService
     {
@@ -33,6 +36,26 @@
 
                 })
                 .ToArrayAsync();
+        }
+
+        public async Task CreateMedicineAsync(MedicineAddViewModel model,string pharmacistId)
+        {
+            PharmacyApp.Data.Models.Medicine medicine = new PharmacyApp.Data.Models.Medicine()
+            {
+                Name = model.Name,
+                ImageUrl = model.ImageUrl,
+                ActiveIngredient = model.ActiveIngredient,
+                ActiveIngredientQuantity = model.ActiveIngredientQuantity,
+                Quantity = int.Parse(model.Quantity),
+                Price = model.Price,
+                PharmacistId=Guid.Parse(pharmacistId),
+                MedicineFormId=model.MedicineFormId,
+                MedicineTypeId=model.MedicineTypeId,
+                ManufacturerId=model.ManufacturerId,
+            };
+
+            await context.Medicines.AddAsync(medicine);
+            await context.SaveChangesAsync();
         }
     }
 }

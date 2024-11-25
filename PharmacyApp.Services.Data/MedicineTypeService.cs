@@ -23,5 +23,11 @@
                 })
                 .ToArrayAsync();
         }
+
+        public async Task<bool> MedicineTypeExistByIdAsync(int id)
+        {
+            return await context.MedicineTypes
+                .AnyAsync(mt => mt.Id == id);
+        }
     }
 }

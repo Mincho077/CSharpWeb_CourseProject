@@ -5,5 +5,10 @@ namespace PharmacyApp.Services.Data.Interfaces
     public interface IManufacturerService
     {
         Task<IEnumerable<ManufacturerViewModel>> GetManufacturersAsync();
+
+        Task<bool> ManufacturerExistByIdAsync(int id);
+       
     }
+
+
 }

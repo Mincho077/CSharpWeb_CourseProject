@@ -23,5 +23,11 @@
                 })
                 .ToArrayAsync();
         }
+
+        public async Task<bool> ManufacturerExistByIdAsync(int id)
+        {
+            return await context.Manufacturers
+                .AnyAsync(m => m.Id == id);
+        }
     }
 }

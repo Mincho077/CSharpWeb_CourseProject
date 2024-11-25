@@ -4,5 +4,7 @@
     public interface IMedicineTypeService
     {
         Task<IEnumerable<MedicineTypeViewModel>>GetMedicineTypesAsync();
+
+        Task<bool> MedicineTypeExistByIdAsync(int id);
     }
 }

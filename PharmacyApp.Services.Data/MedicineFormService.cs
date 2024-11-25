@@ -22,5 +22,11 @@
                 })
                 .ToArrayAsync();
         }
+
+        public async Task<bool> MedicineFormExistByIdAsync(int id)
+        {
+            return await context.MedicineForms
+                .AnyAsync(mf => mf.Id == id);
+        }
     }
 }

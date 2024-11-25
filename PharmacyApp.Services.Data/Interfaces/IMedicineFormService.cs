@@ -4,5 +4,7 @@
     public interface IMedicineFormService
     {
         Task<IEnumerable<MedicineFormViewModel>>GetMedicineFormsAsync();
+
+        Task<bool> MedicineFormExistByIdAsync(int id);
     }
 }
